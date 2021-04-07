@@ -1,36 +1,24 @@
 <div class="card">
   <div class="card-body">
-    <h1 class="card-title d-flex justify-content-between">
+    <h1 class="card-title d-flex justify-content-between mb-4">
       <span><%= @project.name %></span>
-      <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-sm btn-warning" %>
-      <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger"%>
+      <div>
+        <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-sm btn-warning" %>
+        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger"%>
+      </div>
     </h1>
+    <h4>Add task</h4>
+    <%= render 'tasks/form' %>
   </div>
 </div>
 
-
-
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
 
 <%= link_to 'Back', projects_path %>
 
 <hr>
 <h1>New task</h1>
 
-<%= render 'tasks/form' %>
+
 <hr>
 <h1>Tasks</h1>
 
@@ -40,7 +28,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Status</th>
-    <th>Project</th>
+<!--    <th>Project</th>-->
     <th></th>
     <th></th>
     <th></th>
