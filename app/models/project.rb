@@ -15,9 +15,10 @@ class Project < ApplicationRecord
 
   def status
     return 'not-started' if task.none?
-    if tasks.all? { |task| task.complete? }
+
+    if tasks.all?(&:complete?)
       'complete'
-    elsif task.any? { |task| task.in_progress?}
+    elsif task.any?(&:in_progress?)
       'in-progress'
     else
       'not-started'

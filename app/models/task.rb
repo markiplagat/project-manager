@@ -1,12 +1,12 @@
 class Task < ApplicationRecord
   belongs_to :project
 
-  validates :status, inclusion: { in: %w[not-started in-progress complete]}
+  validates :status, inclusion: { in: ['not-started', 'in-progress', 'complete']}
 
   STATUS_OPTIONS =[
-    %w[Not-started not-started],
-    %w[In-Progress in-progress],
-    %w[Complete complete]
+    ['Not started', 'not-started'],
+    ['In Progress', 'in-progress'],
+    ['Complete', 'complete']
   ]
 
   def badge_color
