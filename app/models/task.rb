@@ -1,6 +1,18 @@
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  name        :string
+#  description :text
+#  status      :string
+#  project_id  :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 class Task < ApplicationRecord
   belongs_to :project
-
   validates :status, inclusion: { in: ['not-started', 'in-progress', 'complete']}
 
   STATUS_OPTIONS =[
