@@ -4,8 +4,8 @@ class Task < ApplicationRecord
   validates :status, inclusion: { in: %w[not-started in-progress complete]}
 
   STATUS_OPTIONS =[
-    %w[Not started not-started],
-    %w[In Progress in-progress],
+    %w[Not-started not-started],
+    %w[In-Progress in-progress],
     %w[Complete complete]
   ]
 
